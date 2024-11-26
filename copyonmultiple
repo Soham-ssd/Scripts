@@ -1,0 +1,7 @@
+#add Servers.txt in the same folder where the file.bat is placed to run and also make sure to use nas path as to find the file globally
+@echo Off
+cls
+For /F "tokens=*" %%a in (Servers.txt) Do (
+      Xcopy /S /I /E "\\network\path\C$\path\to\file" "\\%%a\C$\path\to\paste" /y
+)
+pause
