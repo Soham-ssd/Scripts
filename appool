@@ -1,0 +1,16 @@
+#adding appool 
+cd C:\windows\system32\inetsrv
+appcmd add appool /name:nameofpool
+
+#mapping pool remotely
+cd c:\windows\system32\inetsrv
+appcmd set app /app.name:"default web site/path/of/pool" /applicationPool:nameofpool
+#(location of pool present in basic settings or advance settings)
+
+#Logs of appolication pool
+Get-IISSite | Select-Object -ExpandProperty Applications | Select-Object Path,ApplicationPoolName | out-file -filepath  C:\Software\009.txt
+
+#Changing identity and password 
+appcmd set apppool "namofpool" -processModel.identityType:SpecificUser
+appcmd set apppool "namofpool -processModel.userName:domain\name.service
+appcmd set apppool "namofpool" -processModel.password:Xm7!yKY6zr8ORF
