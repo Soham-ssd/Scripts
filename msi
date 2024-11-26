@@ -1,0 +1,9 @@
+#install files remotetly 
+start /wait msiexec /i msiname.msi /qn  
+
+#delete folder structure
+rmdir C:\location\of\folder /s /q
+
+
+
+
