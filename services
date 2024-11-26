@@ -1,0 +1,5 @@
+#stopping service 
+net stop "servicename"
+
+#delete the service
+SC delete "CaeLetterService"
